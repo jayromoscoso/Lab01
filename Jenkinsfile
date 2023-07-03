@@ -5,3 +5,7 @@ pipeline {
       steps {
         sh "pwd"
         sg 'docker build -t Lab01:10 .'
+      }
+    }
+  }
+}
