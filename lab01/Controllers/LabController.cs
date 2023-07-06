@@ -63,7 +63,11 @@ namespace lab01.Controllers
                 return "ERROR";
             }
         }
-
-
+        [HttpGet()]
+        [Route("Version")]
+        public String Version()
+        {
+            return "V14" ;
+        }
     }
 }
