@@ -1,17 +1,16 @@
 pipeline {
-  agent any
-  environment {
-    APPNAME = "lab01"
-    IMAGE = "lab01"
-    VERSION ="v3"
-    REGISTRY="jayromoscoso"
-    DOCKER_HUB_LOGIN = credentials('DockerHubKey')
-    PORT = "8091"
-
-  }
-  stages {
-    stage('Build Image') {
-      steps {
+  agent any
+  environment {
+    APPNAME = "lab01"
+    IMAGE = "lab01"
+    VERSION ="v3"
+    REGISTRY="jayromoscoso"
+    DOCKER_HUB_LOGIN = credentials('DockerHubKey')
+    PORT = "8091"
+  }
+  stages {
+    stage('Build Image') {
+      steps {
         sh "pwd"
         sh 'docker build -t $REGISTRY/$IMAGE:$VERSION .'
       }
